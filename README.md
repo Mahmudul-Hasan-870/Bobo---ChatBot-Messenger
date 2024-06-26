@@ -23,7 +23,7 @@ Bobo - ChatBot Messenger App is a modern Android application designed to facilit
 Clone the repository and open it using Android Studio:
 
 ```bash
-git clone https://github.com/yourusername/bobo-chat-app.git
+git clone https://github.com/Mahmudul-Hasan-870/Bobo---ChatBot-Messenger.git
 ```
 
 ## Usage
