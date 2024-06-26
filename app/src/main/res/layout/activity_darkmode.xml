@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/backgroundColor"
+    tools:context=".activity.DarkModeActivity">
+
+    <!-- Top bar layout -->
+    <RelativeLayout
+        android:id="@+id/mainRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:background="?attr/backgroundColor">
+        <!-- Note: Ensure backgroundColor is defined in your theme attributes -->
+
+        <!-- Back icon -->
+        <ImageView
+            android:id="@+id/backIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:paddingStart="10dp"
+            android:src="@drawable/arrow_left_circle"
+            tools:ignore="RtlSymmetry" />
+        <!-- Ensure @drawable/arrow_left_circle exists in your drawable folder -->
+
+        <!-- Fragment name text view -->
+        <TextView
+            android:id="@+id/fragmentNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="50dp"
+            android:fontFamily="@font/jost_bold"
+            android:text="@string/dark_mode"
+            android:textColor="?attr/textColor"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+        <!-- Ensure @font/jost_bold and @string/dark_mode exist -->
+    </RelativeLayout>
+
+    <!-- Theme Settings Section -->
+    <TextView
+        android:id="@+id/themeSettingsTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mainRelativeLayout"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/jost_bold"
+        android:letterSpacing="0.03"
+        android:lineSpacingExtra="5dp"
+        android:text="@string/theme"
+        android:textColor="?attr/textColor"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+    <!-- Ensure @string/theme exists -->
+
+    <LinearLayout
+        android:id="@+id/layout_setting_profile"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/themeSettingsTitleTextView"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <!-- Dark Mode Label -->
+            <TextView
+                android:id="@+id/tv_setting_profile_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/jost_bold"
+                android:paddingStart="55dp"
+                android:text="@string/dark_mode"
+                android:textColor="?attr/textColor"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+            <!-- Ensure @string/dark_mode exists -->
+
+            <!-- Dark Mode Icon -->
+            <ImageView
+                android:id="@+id/iv_setting_profile_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignStart="@id/tv_setting_profile_label"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="25dp"
+                android:src="@drawable/dark_mode" />
+            <!-- Ensure @drawable/dark_mode exists -->
+
+            <!-- Next Icon -->
+            <ImageView
+                android:id="@+id/iv_next_icon_setting_profile"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignEnd="@id/tv_setting_profile_label"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="25dp"
+                android:src="@drawable/arrow_right" />
+            <!-- Ensure @drawable/arrow_right exists -->
+
+            <!-- Dark Mode Switch -->
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:id="@+id/dark_mode_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@id/tv_setting_profile_label"
+                android:layout_marginEnd="25dp" />
+            <!-- Ensure you have the Material Components library included in your project -->
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

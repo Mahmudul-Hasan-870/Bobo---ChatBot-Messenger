@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!-- TextView for Bot Message -->
+    <TextView
+        android:id="@+id/textMessageBot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_margin="8dp"
+        android:background="@drawable/bg_bot_message"
+        android:fontFamily="@font/jost_bold"
+        android:padding="8dp"
+        android:textColor="@color/white"
+        android:visibility="gone" /> <!-- Initially set to gone -->
+
+    <!-- TextView for Bot Message Timestamp -->
+    <TextView
+        android:id="@+id/textTimestampBot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textMessageBot"
+        android:layout_alignStart="@id/textMessageBot"
+        android:fontFamily="@font/jost_bold"
+        android:textSize="12sp"
+        android:visibility="gone" /> <!-- Initially set to gone -->
+
+    <!-- TextView for User Message -->
+    <TextView
+        android:id="@+id/textMessageUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="8dp"
+        android:background="@drawable/bg_user_message"
+        android:fontFamily="@font/jost_bold"
+        android:padding="8dp"
+        android:textColor="@color/black"
+        android:visibility="gone" /> <!-- Initially set to gone -->
+
+    <!-- TextView for User Message Timestamp -->
+    <TextView
+        android:id="@+id/textTimestampUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textMessageUser"
+        android:layout_alignEnd="@id/textMessageUser"
+        android:fontFamily="@font/jost_bold"
+        android:textSize="12sp"
+        android:visibility="gone" /> <!-- Initially set to gone -->
+
+</RelativeLayout>

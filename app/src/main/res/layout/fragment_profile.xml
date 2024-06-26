@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/backgroundColor"
+    tools:context=".fragment.ProfileFragment">
+
+    <!-- Top bar layout -->
+    <RelativeLayout
+        android:id="@+id/mainRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:background="?attr/backgroundColor">
+
+        <!-- Back icon -->
+        <ImageView
+            android:id="@+id/backIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:paddingStart="10dp"
+            android:src="@drawable/arrow_left_circle"
+            tools:ignore="RtlSymmetry" />
+
+        <!-- Fragment name text view -->
+        <TextView
+            android:id="@+id/fragmentNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="50dp"
+            android:fontFamily="@font/jost_bold"
+            android:text="@string/profile"
+            android:textColor="?attr/textColor"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <!-- Circle Image View for profile picture -->
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_below="@id/mainRelativeLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:src="@mipmap/ic_launcher"
+        app:civ_border_color="@color/grey"
+        app:civ_border_width="1dp" />
+
+    <!-- TextView for Name -->
+    <TextView
+        android:id="@+id/text_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profile_image"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:fontFamily="@font/jost_bold"
+        android:gravity="center_horizontal"
+        android:textColor="?attr/textColor"
+        android:textSize="18sp" />
+
+    <!-- TextView for Email -->
+    <TextView
+        android:id="@+id/text_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_name"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:fontFamily="@font/jost_bold"
+        android:gravity="center_horizontal"
+        android:textColor="?attr/textColor"
+        android:textSize="12sp" />
+
+    <!-- TextView for Phone -->
+    <TextView
+        android:id="@+id/text_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_email"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:fontFamily="@font/jost_bold"
+        android:gravity="center_horizontal"
+        android:textColor="?attr/textColor"
+        android:textSize="12sp" />
+
+    <!-- Divider View -->
+    <View
+        android:id="@+id/my_view"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/text_phone"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/grey" />
+
+    <!-- Edit Profile LinearLayout -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/my_view"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Edit Profile Item -->
+            <LinearLayout
+                android:id="@+id/edit_profile"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:onClick="onClick"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center">
+
+                    <!-- Edit Profile Label -->
+                    <TextView
+                        android:id="@+id/editProfileLabelTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/jost_bold"
+                        android:paddingStart="55dp"
+                        android:text="@string/edit_profile"
+                        android:textColor="?attr/textColor"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <!-- Edit Profile Icon -->
+                    <ImageView
+                        android:id="@+id/editProfileIcon"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignStart="@id/editProfileLabelTextView"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="25dp"
+                        android:src="@drawable/profile_unselected" />
+
+                    <!-- Next Icon -->
+                    <ImageView
+                        android:id="@+id/nextIconEditProfile"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignEnd="@id/editProfileLabelTextView"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="25dp"
+                        android:src="@drawable/arrow_right" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <!-- Dark Mode LinearLayout -->
+            <LinearLayout
+                android:id="@+id/layout_darkmode_profile"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:onClick="onClick"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center">
+
+                    <!-- Dark Mode Label -->
+                    <TextView
+                        android:id="@+id/tv_darkmode_profile_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/jost_bold"
+                        android:paddingStart="55dp"
+                        android:text="@string/dark_mode"
+                        android:textColor="?attr/textColor"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <!-- Dark Mode Icon -->
+                    <ImageView
+                        android:id="@+id/iv_darkmode_profile_icon"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignStart="@id/tv_darkmode_profile_label"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="25dp"
+                        android:src="@drawable/dark_mode" />
+
+                    <!-- Next Icon -->
+                    <ImageView
+                        android:id="@+id/iv_next_icon_darkmode_profile"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignEnd="@id/tv_darkmode_profile_label"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="25dp"
+                        android:src="@drawable/arrow_right" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <!-- Privacy Policy LinearLayout -->
+            <LinearLayout
+                android:id="@+id/privacy_policy_settings"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:onClick="onClick"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center">
+
+                    <!-- Privacy Policy Label -->
+                    <TextView
+                        android:id="@+id/privacyPolicyLabelTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/jost_bold"
+                        android:paddingStart="55dp"
+                        android:text="@string/privacy_policy"
+                        android:textColor="?attr/textColor"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <!-- Privacy Policy Icon -->
+                    <ImageView
+                        android:id="@+id/privacyPolicyIcon"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignStart="@id/privacyPolicyLabelTextView"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="25dp"
+                        android:src="@drawable/policy" />
+
+                    <!-- Next Icon -->
+                    <ImageView
+                        android:id="@+id/nextIconPrivacyPolicy"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignEnd="@id/privacyPolicyLabelTextView"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="25dp"
+                        android:src="@drawable/arrow_right" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <!-- Help and Feedback LinearLayout -->
+            <LinearLayout
+                android:id="@+id/help_settings"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:onClick="onClick"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center">
+
+                    <!-- Help and Feedback Label -->
+                    <TextView
+                        android:id="@+id/helpLabelTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/jost_bold"
+                        android:paddingStart="55dp"
+                        android:text="@string/help_and_feedback"
+                        android:textColor="?attr/textColor"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <!-- Help and Feedback Icon -->
+                    <ImageView
+                        android:id="@+id/helpIcon"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignStart="@id/helpLabelTextView"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="25dp"
+                        android:src="@drawable/mail" />
+
+                    <!-- Next Icon -->
+                    <ImageView
+                        android:id="@+id/nextIconHelp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignEnd="@id/helpLabelTextView"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="25dp"
+                        android:src="@drawable/arrow_right" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <!-- Delete History LinearLayout -->
+            <LinearLayout
+                android:id="@+id/delete_history_settings"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:onClick="onClick"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center">
+
+                    <!-- Delete History Label -->
+                    <TextView
+                        android:id="@+id/deleteHistoryLabelTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/jost_bold"
+                        android:paddingStart="55dp"
+                        android:text="@string/delete_history"
+                        android:textColor="?attr/textColor"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <!-- Delete History Icon -->
+                    <ImageView
+                        android:id="@+id/deleteHistoryIcon"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignStart="@id/deleteHistoryLabelTextView"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="25dp"
+                        android:src="@drawable/delete" />
+
+                    <!-- Next Icon -->
+                    <ImageView
+                        android:id="@+id/nextIconDeleteHistory"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignEnd="@id/deleteHistoryLabelTextView"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="25dp"
+                        android:src="@drawable/arrow_right" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <!-- Logout LinearLayout -->
+            <LinearLayout
+                android:id="@+id/logout_settings"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:onClick="onClick"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center">
+
+                    <!-- Logout Label -->
+                    <TextView
+                        android:id="@+id/logoutLabelTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/jost_bold"
+                        android:paddingStart="55dp"
+                        android:text="@string/delete_account"
+                        android:textColor="#FF0000"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <!-- Logout Icon -->
+                    <ImageView
+                        android:id="@+id/logoutIcon"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignStart="@id/logoutLabelTextView"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="25dp"
+                        android:src="@drawable/logout" />
+
+                    <!-- Version Text -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignEnd="@id/logoutLabelTextView"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="25dp"
+                        android:fontFamily="@font/jost_bold"
+                        android:text="@string/version"
+                        android:textColor="?attr/textColor"
+                        android:textSize="10sp" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

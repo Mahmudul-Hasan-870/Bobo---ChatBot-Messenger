@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/backgroundColor"
+    tools:context=".fragment.HistoryFragment">
+
+    <!-- Top bar layout -->
+    <RelativeLayout
+        android:id="@+id/mainRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:background="?attr/backgroundColor">
+
+        <!-- Back icon -->
+        <ImageView
+            android:id="@+id/backIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:paddingStart="10dp"
+            android:src="@drawable/arrow_left_circle"
+            tools:ignore="RtlSymmetry" />
+        <!-- Ensure @drawable/arrow_left_circle is defined in your resources -->
+
+        <!-- Fragment name TextView -->
+        <TextView
+            android:id="@+id/fragmentNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="50dp"
+            android:fontFamily="@font/jost_bold"
+            android:text="@string/history"
+            android:textColor="?attr/textColor"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+        <!-- Ensure @string/history and @font/jost_bold are defined in your resources -->
+
+    </RelativeLayout>
+
+    <!-- RecyclerView for displaying history items -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewHistory"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/mainRelativeLayout"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp" />
+    <!-- This RecyclerView will display the history items below the top bar -->
+
+    <!-- No Data ImageView -->
+    <ImageView
+        android:id="@+id/noDataImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@drawable/no_data_cuate"
+        android:visibility="gone" />
+    <!-- Ensure @drawable/no_data_cuate is defined in your resources -->
+    <!-- This ImageView is displayed when there is no data, initially hidden -->
+</RelativeLayout>

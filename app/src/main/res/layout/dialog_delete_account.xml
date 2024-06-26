@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/backgroundColor"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <!-- TextView for the title of the dialog -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/jost_bold"
+        android:gravity="center"
+        android:text="@string/delete_account"
+        android:textColor="?attr/textColor"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+    <!-- Ensure @font/jost_bold and @string/delete_account are defined in your resources -->
+
+    <!-- TextView for the message of the dialog -->
+    <TextView
+        android:id="@+id/tvMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:fontFamily="@font/jost_bold"
+        android:gravity="center"
+        android:text="@string/are_you_sure_you_want_to_delete_your_account"
+        android:textColor="?attr/textColor"
+        android:textSize="15sp" />
+    <!-- Ensure @string/are_you_sure_you_want_to_delete_your_account is defined in your resources -->
+
+    <!-- LinearLayout for the buttons (Yes and No) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <!-- Yes Button -->
+        <Button
+            android:id="@+id/btnYes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/primaryColor"
+            android:fontFamily="@font/jost_bold"
+            android:text="@string/yes"
+            android:textColor="@color/white" />
+        <!-- Ensure @string/yes and @color/primaryColor are defined in your resources -->
+
+        <!-- No Button -->
+        <Button
+            android:id="@+id/btnNo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/primaryColor"
+            android:fontFamily="@font/jost_bold"
+            android:text="@string/no"
+            android:textColor="@color/white" />
+        <!-- Ensure @string/no and @color/primaryColor are defined in your resources -->
+    </LinearLayout>
+</LinearLayout>

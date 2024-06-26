@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/backgroundColor"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <!-- ViewPager2 for onboarding slides -->
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <!-- Make sure to include the ViewPager2 dependency in your build.gradle -->
+
+    <!-- Dots indicator for ViewPager2 -->
+    <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
+        android:id="@+id/dotsIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="100dp"
+        app:dotsColor="@color/primaryColor"
+        app:dotsSize="8dp"
+        app:dotsSpacing="8dp" />
+    <!-- Ensure you have the tbuonomo:viewpagerdotsindicator library included in your build.gradle -->
+
+    <!-- Next Button -->
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="25dp"
+        android:backgroundTint="@color/primaryColor"
+        android:fontFamily="@font/jost_bold"
+        android:text="@string/next"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+    <!-- Ensure @color/primaryColor, @color/white, @font/jost_bold, and @string/next are defined in your resources -->
+
+</RelativeLayout>

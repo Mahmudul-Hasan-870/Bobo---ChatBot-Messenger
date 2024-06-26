@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Primary Color for branding -->
+    <color name="primaryColor">#615EFC</color>
+
+    <!-- Active Indicator Color (similar to primaryColor) -->
+    <color name="activeIndicator">#615EFC</color>
+
+    <!-- Grey Color for background or neutral elements -->
+    <color name="grey">#FAFAFA</color>
+
+    <!-- Black Color for text and important elements -->
+    <color name="black">#13192F</color>
+
+    <!-- Darker Black Color for items and backgrounds -->
+    <color name="itemBlack">#2A2F3F</color>
+
+    <!-- White Color for text and backgrounds -->
+    <color name="white">#FFFFFFFF</color>
+
+</resources>

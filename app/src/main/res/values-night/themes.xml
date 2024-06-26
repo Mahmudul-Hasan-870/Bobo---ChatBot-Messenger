@@ -1,0 +1,21 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Bobo" parent="Theme.Material3.Dark.NoActionBar">
+        <!-- Customize your dark theme here. -->
+
+        <!-- Background color for the entire application -->
+        <item name="backgroundColor">@color/black</item>
+
+        <!-- Background color for items (such as list items) -->
+        <item name="itemBackground">@color/itemBlack</item>
+
+        <!-- Text color for the application -->
+        <item name="textColor">@color/white</item>
+    </style>
+
+    <!-- Custom style for the active indicator in Bottom Navigation View -->
+    <style name="App.Custom.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <!-- Color for the active indicator -->
+        <item name="android:color">@color/activeIndicator</item>
+    </style>
+</resources>

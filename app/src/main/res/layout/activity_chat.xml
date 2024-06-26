@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/backgroundColor"
+    tools:context=".activity.ChatActivity">
+
+    <!-- Top bar layout -->
+    <RelativeLayout
+        android:id="@+id/mainRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:background="?attr/backgroundColor">
+
+        <!-- Search icon -->
+        <ImageView
+            android:id="@+id/backIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:onClick="onClick"
+            android:paddingStart="10dp"
+            android:src="@drawable/arrow_left_circle"
+            tools:ignore="RtlSymmetry" />
+
+        <!-- Fragment name text view -->
+        <TextView
+            android:id="@+id/fragmentNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="50dp"
+            android:fontFamily="@font/jost_bold"
+            android:text="@string/chat_ai"
+            android:textColor="?attr/textColor"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <!-- RecyclerView for chat messages -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewChat"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/editLayout"
+        android:layout_below="@id/mainRelativeLayout"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp" />
+
+    <!-- Bottom edit layout -->
+    <LinearLayout
+        android:id="@+id/editLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <!-- EditText for user input -->
+        <EditText
+            android:id="@+id/editTextUserInput"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_margin="16dp"
+            android:layout_weight="4"
+            android:background="@drawable/search_background"
+            android:drawablePadding="20dp"
+            android:fontFamily="@font/jost_bold"
+            android:hint="@string/type_your_message_here"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:letterSpacing="0.03"
+            android:lineSpacingExtra="5dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:textColor="@color/black"
+            android:textColorHint="#9D9A9A"
+            android:textSize="15sp"
+            tools:ignore="RtlSymmetry" />
+
+        <!-- Send button -->
+        <ImageButton
+            android:id="@+id/actionButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="16dp"
+            android:layout_weight="1"
+            android:background="@drawable/circular_button"
+            android:src="@drawable/send"
+            app:backgroundTint="@color/primaryColor" />
+
+    </LinearLayout>
+
+    <!-- TextView for empty state message -->
+    <TextView
+        android:id="@+id/textViewEmpty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:fontFamily="@font/jost_bold"
+        android:text="@string/start_a_conversation"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:visibility="visible" />
+
+</RelativeLayout>

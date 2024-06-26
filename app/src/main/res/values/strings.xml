@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Bobo</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="chat_ai">Chat AI</string>
+    <string name="type_your_message_here">Type your message here...</string>
+    <string name="start_a_conversation">Start a conversation</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="theme">Theme</string>
+    <string name="fill_your_profile">Fill Your Profile</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="continue_">Continue</string>
+    <string name="next">Next</string>
+    <string name="congratulations">Congratulations!</string>
+    <string name="your_account_is_ready_to_use_you_will_be_redirected_to_the_home_page_in_a_few_seconds">Your account is ready to use. You will be redirected to the Home page in a few seconds.</string>
+    <string name="delete_account">Delete Account</string>
+    <string name="are_you_sure_you_want_to_delete_your_account">Are you sure you want to delete your account?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="delete_chat_history">Delete Chat History</string>
+    <string name="are_you_sure_you_want_to_delete_all_chat_history">Are you sure you want to delete all chat history?</string>
+    <string name="welcome">Welcome!</string>
+    <string name="let_s_have_fun_with_bobo">Let\'s Have Fun with Bobo!</string>
+    <string name="start_a_conversation_with_bobo_right_now">Start a conversation with Bobo right now!</string>
+    <string name="start_chat_with_bobo">Start Chat with Bobo</string>
+    <string name="history">History</string>
+    <string name="profile">Profile</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="help_and_feedback">Help and Feedback</string>
+    <string name="delete_history">Delete History</string>
+    <string name="version">V1.0.0</string>
+    <string name="get_started">Get Started</string>
+</resources>
